@@ -1,9 +1,10 @@
----
-layout:     post
-title:      Pixyll has Pagination
-date:       2014-06-08 11:21:29
-summary:    This is an empty post to illustrate the pagination component with Pixyll.
-categories: jekyll pixyll
----
+ ---
+ layout:     post
+ title:      Spring Boot в деталях
+ date:       2018-10-23 11:21:29
+ summary:    Тут я постараюсь максимально детально пояснить Spring Boot и то как он устроен.
+ categories: spring spring-boot
+ ---
 
-This is an empty post to illustrate the pagination component with Pixyll.
+ Теория
+
