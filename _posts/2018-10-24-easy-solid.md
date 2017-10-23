@@ -38,66 +38,103 @@ categories: java base
 
 Создавая наследников одного и тогоже интерфейса или абстрактного класса они не должны менять поведения базового класса. Тоесть имея две реализации **B** и **C** класса **A** мы можем с легкость менять реализации и получать одинаковое конечное поведение обоих реализаций.
 
-1) base type
+### ISP - Interface Segregation Principle
 
-```java
-class Sample extends Base {
-    private String name;
-  
-	public Sample() {
-        super();
-    }
-}
-```
+Description ...
+
+### Dependecy Injection Principle
+
+Description ...
 
 ### Code, with syntax highlighting
 
 Here's an example of some ruby code with line anchors.
 
 {% highlight java lineanchors %}
-package io.tbox.auth.service;
+package io.tbox.auth;
 
-import org.springframework.context.annotation.Primary;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Service;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 
 
-@Primary
-@Service
-public class JwtUserDetailsServiceImpl implements UserDetailsService {
+@SpringBootApplication
+@EnableDiscoveryClient
+@EnableResourceServer
+public class AuthApplication {
 
-    @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return null;
+    public static void main(String[] args) {
+        SpringApplication.run(AuthApplication.class, args);
     }
+
 }
 {% endhighlight %}
 
-Code without lineanchors
+- default:
+
+```java
+package io.tbox.auth;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
+
+
+@SpringBootApplication
+@EnableDiscoveryClient
+@EnableResourceServer
+public class AuthApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(AuthApplication.class, args);
+    }
+
+}
+```
+
+Here's some CSS:
 
 {% highlight css %}
-package io.tbox.auth.service;
-
-import org.springframework.context.annotation.Primary;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Service;
-
-
-@Primary
-@Service
-public class JwtUserDetailsServiceImpl implements UserDetailsService {
-
-    @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return null;
-    }
+.foobar {
+  /* Named colors rule */
+  color: tomato;
 }
-
 {% endhighlight %}
+
+- default:
+
+```css
+.foobar {
+  /* Named colors rule */
+  color: tomato;
+}
+```
+
+Here's some JavaScript:
+
+{% highlight js %}
+var isPresent = require('is-present')
+
+module.exports = function doStuff(things) {
+  if (isPresent(things)) {
+    doOtherStuff(things)
+  }
+}
+{% endhighlight %}
+
+- default:
+
+```javascript
+var isPresent = require('is-present')
+
+module.exports = function doStuff(things) {
+  if (isPresent(things)) {
+    doOtherStuff(things)
+  }
+}
+```
 
 Here's some HTML:
 
@@ -107,11 +144,10 @@ Here's some HTML:
 </div>
 {% endhighlight %}
 
+- default:
 
-### ISP - Interface Segregation Principle
-
-Description ...
-
-### Dependecy Injection Principle
-
-Description ...
+```html
+<div class="m0 p0 bg-blue white">
+  <h3 class="h1">Hello, world!</h3>
+</div>
+```
