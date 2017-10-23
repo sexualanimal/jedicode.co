@@ -54,46 +54,49 @@ class Sample extends Base {
 
 Here's an example of some ruby code with line anchors.
 
-{% highlight ruby lineanchors %}
-# The most awesome of classes
-class Awesome < ActiveRecord::Base
-  include EvenMoreAwesome
+{% highlight java lineanchors %}
+package io.tbox.auth.service;
 
-  validates_presence_of :something
-  validates :email, email_format: true
+import org.springframework.context.annotation.Primary;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
-  def initialize(email, name = nil)
-    self.email = email
-    self.name = name
-    self.favorite_number = 12
-    puts 'created awesomeness'
-  end
 
-  def email_format
-    email =~ /\S+@\S+\.\S+/
-  end
-end
+@Primary
+@Service
+public class JwtUserDetailsServiceImpl implements UserDetailsService {
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        return null;
+    }
+}
 {% endhighlight %}
 
-Here's some CSS:
+Code without lineanchors
 
 {% highlight css %}
-.foobar {
-  /* Named colors rule */
-  color: tomato;
+package io.tbox.auth.service;
+
+import org.springframework.context.annotation.Primary;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+
+
+@Primary
+@Service
+public class JwtUserDetailsServiceImpl implements UserDetailsService {
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        return null;
+    }
 }
-{% endhighlight %}
 
-Here's some JavaScript:
-
-{% highlight js %}
-var isPresent = require('is-present')
-
-module.exports = function doStuff(things) {
-  if (isPresent(things)) {
-    doOtherStuff(things)
-  }
-}
 {% endhighlight %}
 
 Here's some HTML:
@@ -103,7 +106,6 @@ Here's some HTML:
   <h3 class="h1">Hello, world!</h3>
 </div>
 {% endhighlight %}
-
 
 
 ### ISP - Interface Segregation Principle
