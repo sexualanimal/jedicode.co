@@ -38,7 +38,19 @@ categories: java base
 
 Создавая наследников одного и тогоже интерфейса или абстрактного класса они не должны менять поведения базового класса. Тоесть имея две реализации **B** и **C** класса **A** мы можем с легкость менять реализации и получать одинаковое конечное поведение обоих реализаций.
 
-![Liskov Principle](../images/2018-10-24/LiskovSubtitutionPrinciple.jpg)
+// todo
+
+```java
+class Sample extends Base {
+    private String name;
+  
+  	public Sample() {
+        super();
+    }
+}
+```
+
+
 
 ### ISP - Interface Segregation Principle
 
