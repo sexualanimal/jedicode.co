@@ -2,7 +2,7 @@
 layout:     post
 title:      SOLID простым языком
 date:       2018-10-24 17:04:10
-summary:    Как это не странно, но очень много уже состоявшихся разработчиков в том числе и я в свое время не был знаком с таким термином как SOLID даже правильней сказать акронимом. Тут я попытаюсь максимально просто и в тот же момент максимально информативно вам пояснить что же такое SOLID и почему вам его нужно знать.
+summary:    Тут я попытаюсь максимально просто и в тот же момент максимально информативно вам пояснить что же такое SOLID и почему вам его нужно знать.
 categories: java base
 ---
 
@@ -34,11 +34,9 @@ categories: java base
 
 Придерживаясь этого принципа конкретно в Java можно с помощью ключевого слова `final` который запретит дальнейшей модикации метода или же свойства класса.
 
-### LSP - Liskov Substitution Principle
+###LSP - Liskov Substitution Principle
 
 Создавая наследников одного и тогоже интерфейса или абстрактного класса они не должны менять поведения базового класса. Тоесть имея две реализации **B** и **C** класса **A** мы можем с легкость менять реализации и получать одинаковое конечное поведение обоих реализаций.
-
-![Liskov Principle](/images/2018-10-24/LiskovSubtitutionPrinciple.jpg)
 
 ### ISP - Interface Segregation Principle
 
@@ -47,3 +45,57 @@ Description ...
 ### Dependecy Injection Principle
 
 Description ...
+
+### Code, with syntax highlighting
+
+Here's an example of some java code:
+
+```java
+package io.tbox.auth;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
+
+
+@SpringBootApplication
+@EnableDiscoveryClient
+@EnableResourceServer
+public class AuthApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(AuthApplication.class, args);
+    }
+
+}
+```
+
+Here's some CSS:
+
+```css
+.foobar {
+  /* Named colors rule */
+  color: tomato;
+}
+```
+
+Here's some JavaScript:
+
+```javascript
+var isPresent = require('is-present')
+
+module.exports = function doStuff(things) {
+  if (isPresent(things)) {
+    doOtherStuff(things)
+  }
+}
+```
+
+Here's some HTML:
+
+```html
+<div class="m0 p0 bg-blue white">
+  <h3 class="h1">Hello, world!</h3>
+</div>
+```
