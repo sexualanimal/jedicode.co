@@ -38,17 +38,71 @@ categories: java base
 
 Создавая наследников одного и тогоже интерфейса или абстрактного класса они не должны менять поведения базового класса. Тоесть имея две реализации **B** и **C** класса **A** мы можем с легкость менять реализации и получать одинаковое конечное поведение обоих реализаций.
 
-// todo
+1) base type
 
 ```java
 class Sample extends Base {
     private String name;
   
-  	public Sample() {
+	public Sample() {
         super();
     }
 }
 ```
+
+### Code, with syntax highlighting
+
+Here's an example of some ruby code with line anchors.
+
+{% highlight ruby lineanchors %}
+# The most awesome of classes
+class Awesome < ActiveRecord::Base
+  include EvenMoreAwesome
+
+  validates_presence_of :something
+  validates :email, email_format: true
+
+  def initialize(email, name = nil)
+    self.email = email
+    self.name = name
+    self.favorite_number = 12
+    puts 'created awesomeness'
+  end
+
+  def email_format
+    email =~ /\S+@\S+\.\S+/
+  end
+end
+{% endhighlight %}
+
+Here's some CSS:
+
+{% highlight css %}
+.foobar {
+  /* Named colors rule */
+  color: tomato;
+}
+{% endhighlight %}
+
+Here's some JavaScript:
+
+{% highlight js %}
+var isPresent = require('is-present')
+
+module.exports = function doStuff(things) {
+  if (isPresent(things)) {
+    doOtherStuff(things)
+  }
+}
+{% endhighlight %}
+
+Here's some HTML:
+
+{% highlight html %}
+<div class="m0 p0 bg-blue white">
+  <h3 class="h1">Hello, world!</h3>
+</div>
+{% endhighlight %}
 
 
 
