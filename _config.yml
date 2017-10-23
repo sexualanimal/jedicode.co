@@ -6,6 +6,7 @@ description: "Журнал джедая и его путь от падавана
 baseurl:     ""
 url:         "http://jedicode.co"
 date_format: "%b %-d, %Y"
+timezone: Europe/Kiev # временная зона
 header_pages:
  - about.md
 # - contact.html
@@ -119,7 +120,8 @@ markdown:     kramdown
 redcarpet:
   extensions: ['smart', 'tables', 'with_toc_data']
 permalink: /:categories/:title/
-paginate:     4
+paginate:     6
+paginate_path: 'page:num'
 sass:
   style: compressed
 plugins:
