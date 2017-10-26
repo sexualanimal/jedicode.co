@@ -40,7 +40,7 @@ categories: java design principles
 
 Очень круто это показывает изображение ниже:
 
-![Liskov Substitution Principle](/images/2018-10-24/LiskovSubtitutionPrinciple.jpg)
+![Liskov Substitution Principle](/images/posts/posts/2018-10-24/LiskovSubtitutionPrinciple.jpg)
 
 **Преимущества:**
 
